@@ -57,7 +57,7 @@ jobs:
                        model=G970F \
                        name="Cruel-zogoibi1"        \
                        toolchain=$TOOLCHAIN      \
-                       +magisk+canary            \
+                       +magisk                   \
                        +nohardening              \
                        +ttl                      \
                        +wireguard                \
@@ -67,6 +67,7 @@ jobs:
                        +boeffla_wl_blocker       \
                        +nodebug                  \
                        +sched_conservative        \
+                       +os_patch_level=2022-07    \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
