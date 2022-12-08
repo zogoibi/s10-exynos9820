@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        model: [ "G970F,G973F,G975F", "N975F" ]
+        model: [ "G970F" ]
 
     steps:
       - uses: actions/checkout@v3
@@ -54,11 +54,11 @@ jobs:
         run: |
           set -e -o pipefail
           ./cruelbuild config                    \
-                       model=G970F \
+                       model=${{ matrix.model }} \
                        name="Cruel-zogoibi2"        \
                        toolchain=$TOOLCHAIN      \
                        os_patch_level=2022-07     \
-                       +magisk                   \
+                       +magisk=canary                   \
                        +nohardening              \
                        +ttl                      \
                        +ntfs                     \
@@ -71,9 +71,7 @@ jobs:
                        +noaudit                 \
                        +noksm                    \
                        +nomodules                 \
-                       +usb_serial                \
                        +sched_conservative        \
-                       +sched_powersave          \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
