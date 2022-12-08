@@ -71,7 +71,7 @@ jobs:
                        +noaudit                 \
                        +noksm                    \
                        +nomodules                 \
-                       +usbserial                \
+                       +usb_serial                \
                        +sched_conservative        \
                        +sched_powersave          \
           2>&1 | tee config.info
