@@ -55,19 +55,25 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=G970F \
-                       name="Cruel-zogoibi1"        \
+                       name="Cruel-zogoibi2"        \
                        toolchain=$TOOLCHAIN      \
                        os_patch_level=2020-07     \
                        +magisk                   \
                        +nohardening              \
                        +ttl                      \
+                       +ntfs                     \
                        +wireguard                \
                        +sdfat                    \
                        +force_dex_wqhd           \
                        +morosound                \
                        +boeffla_wl_blocker       \
                        +nodebug                  \
+                       +noaudit                 \
+                       +noksm                    \
+                       +nomodules                 \
+                       +usbserial                \
                        +sched_conservative        \
+                       +sched_powersave          \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
