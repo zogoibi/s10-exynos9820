@@ -57,7 +57,7 @@ jobs:
                        model=G970F \
                        name="Cruel-zogoibi2"        \
                        toolchain=$TOOLCHAIN      \
-                       os_patch_level=2020-07     \
+                       os_patch_level=2022-07     \
                        +magisk                   \
                        +nohardening              \
                        +ttl                      \
